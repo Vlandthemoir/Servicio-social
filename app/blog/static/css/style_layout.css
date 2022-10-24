@@ -1,0 +1,250 @@
+:root {
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+
+    --primario: rgb(42, 35, 83);
+    --gris: #e1e1e1;
+    --blanco: #ffffff;
+    --negro: #000000;
+    --darkgray: rgb(78, 78, 78);
+    --lightgray: rgb(105, 105, 105);
+    --lightprimario:rgb(117, 101, 194);
+}
+* {
+  box-sizing: border-box;
+
+  padding: 0;
+}
+body {
+  background-color: rgb(67, 198, 96);
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='64' viewBox='0 0 32 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 28h20V16h-4v8H4V4h28v28h-4V8H8v12h4v-8h12v20H0v-4zm12 8h20v4H16v24H0v-4h12V36zm16 12h-4v12h8v4H20V44h12v12h-4v-8zM0 36h8v20H0v-4h4V40H0v-4z' fill='%236a676e' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+/*<-----configuraciones para el contenido del header----->*/
+header {
+/*  margin-top: 25px;*/
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  background: black;
+  padding: 20px 7px;
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+
+  font-family: var(--fuenteHeading);
+  height:125px;
+
+  color: white;
+}
+
+/*configuracion para el logo del header*/
+.logo-header {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+.logo-header h1 {
+  font-weight: 400;
+}
+.logo-header h1 span {
+  font-weight: 700;
+}
+
+/*Menu*/
+
+/*configuracion para el menu a pantalla completa*/
+
+header .navbar ul {
+  list-style: none;
+
+}
+header .navbar ul li {
+  position: relative;
+  float: left;
+}
+header .navbar ul li a {
+  font-size: 20px;
+  padding: 10px;
+  color: white;
+  display: block;
+
+  text-decoration: none;
+
+}
+header .navbar ul li a:hover {
+  background: var(--darkgray);
+  color: white;
+  border-radius: 20px;
+}
+header .navbar ul li ul {
+  position: absolute;
+  left: 0;
+  width: 200px;
+  background: var(--lightgray);
+  display: none;
+  border-radius: 20px;
+}
+header .navbar ul li ul li {
+  width: 100%;
+  border-top: 1px solid rgb(0,0,0,.1);
+}
+header .navbar ul li ul li ul {
+  left: 200px;
+  top: 0;
+}
+header .navbar ul li:focus-within > ul,
+header .navbar ul li:hover > ul {
+  display: initial;
+}
+
+.navbar ul li .icon {
+ color: white;
+ display: none;
+}
+
+.hidden-navbar {
+ display: none;
+}
+
+@media(max-width:991px){
+ .header{
+ padding-top: 50px;
+ padding-bottom:75px;
+ }
+ .navbar{
+ position: fixed;
+ display: flex;
+ margin-top: 100px;
+ right: 15px;
+ }
+ .container {
+ margin-top:75px;
+ }
+}
+
+/*configuracion para la barra de eventos*/
+.events-bar {
+  padding: 0;
+  position: relative;
+  max-width: 1400px;
+  margin: 0;
+  margin-top: -150px;/*130-140*/
+  padding-top: 0; /*ver si esto queda bien*/
+  font-family: var(--fuenteParrafos);
+  background: var(--lightgray);
+  height: 35px;
+}
+.events-heading {
+  margin: 0;
+  height: 25px;
+  display: block;
+  position: absolute;
+  /*font-style: italic;*/
+  font-size: 18px;
+  background: white;
+  color: black;
+  padding: 0;
+  letter-spacing: 3px;
+  font-weight: 700;
+  z-index: 2;
+
+  text-align: center;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.events-text {
+  height: 24px;
+  background: var(--negro);
+  overflow: hidden;
+  position: relative;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 15px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  left: 12px;
+
+}
+.events-text {
+  margin-top: 40px;
+  position: absolute;
+  /*width: 150%;*/
+
+  font-weight: 700;
+  text-align: center;
+
+  transform: translateX(100%);
+  animation: moving 20s linear infinite;
+}
+.text {
+  width: 400px;
+
+}
+.events-title {
+  width: 170px;
+  background: white;
+  color: black;
+  border-radius: 10px;
+}
+@keyframes moving {
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(-100%);
+  }
+}
+
+/*<------------------------------------------------------>*/
+/*<------configuracion para el contenido del cuerpo------>*/
+
+/*<------------------------------------------------------>*/
+/*<------configuracion para el contenido del footer------>*/
+footer {
+  background: black;
+  padding: 40px;
+
+
+  top:0; left:0; right:0;
+  z-index: -1000;
+}
+footer nav {
+  width:500px;
+  height:100px;
+  margin-left: 433px;
+}
+.fa {
+  padding: 20px;
+  width: 90px;
+  text-align: center;
+  text-decoration: none;
+  border-radius:100%;
+  cursor: pointer;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+ background: #55ACEE;
+ color: white;
+}
+
+.fa-youtube {
+ background: #bb0000;
+ color: white;
+}
+
+.fa-instagram {
+ background: #125688;
+ color: white;
+}
+/*<------------------------------------------------------>*/

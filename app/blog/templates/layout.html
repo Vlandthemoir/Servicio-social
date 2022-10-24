@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"  href="{{ url_for('blog.static', filename='css/style_layout.css') }}">
+    <title>CentroCultural</title>
+  </head>
+  <body>
+    <header class="header">
+	    <a  href="{{url_for('blog.home')}}" class="logo-header"><h1>Centro<span>Cultural</span></h1></a>
+          <div class="events-bar">
+            <div class="events-fondo"></div>
+            <div class="events-text">
+              <p class="events-title">Proximos eventos</p>
+              {% for evn in  eventos  %}
+	      <p class="text">{{ evn.1+" " }}{{evn.3}}</p>
+              {% endfor %}
+            </div>
+          </div>
+          <nav class="navbar">
+		  
+            <ul>
+              <li><a href="#">Talleres</a>
+                <ul>
+			<li><a href="{{url_for('blog.verano')}}">Verano</a></li>
+			<li><a href="{{url_for('blog.permanente')}}">Permamentes</a></li>
+                </ul>
+              </li>
+	      <li><a href="{{url_for('blog.articulos')}}">Articulos</a>
+	      </li>
+	      <li><a href="{{url_for('blog.calendario')}}">Calendario</a></li>
+	      <li><a href="{{url_for('blog.galeria')}}">Galeria</a></li>
+	      
+            </ul>
+	    	  
+          </nav>
+    </header>
+    <div class="container">
+      {% block content%}
+    	{% endblock%}
+   </div>
+  </body>
+</html>

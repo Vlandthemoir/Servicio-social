@@ -1,0 +1,137 @@
+:root {
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+
+    --primario: rgb(42, 35, 83);
+    --gris: #e1e1e1;
+    --blanco: #ffffff;
+    --negro: #000000;
+    --darkgray: rgb(78, 78, 78);
+    --lightgray: rgb(105, 105, 105);
+    --lightprimario:rgb(117, 101, 194);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fuenteParrafos);
+}
+body{
+
+  min-height: 100vh;
+}
+
+.general-container {
+ padding-top: 25px;
+}
+
+.table {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+}
+/*configuraciones para el texto del encabezado*/
+.title {
+  padding-top: 125px;
+  padding-bottom: 25px;
+  text-align: center;
+  font-family: var(--fuenteHeading);
+}
+/*<------------------------------------------>*/
+/*configuracion titulo*/
+.title h1 {
+ color:white;
+ font-size: 50px;
+ text-shadow: #474747 3px 5px 2px, 40px 28px 20px rgba(0,0,0,0);
+font-weight: 750; 	
+}
+/*<----------------->*/
+/*<---------configuracion para cartas--------->*/
+.card {
+  position:  relative;
+  width: 300px;
+  height: 350px;
+  margin: 20px;
+}
+.card .face{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: white;
+    background: rgba(0,0,0,.4);
+    text-align: center;
+}
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: rgb(3, 35, 54);
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+.card .back h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+.card .back div {
+    font-size:20px;
+}
+.card .back p {
+    letter-spacing: 1px;
+}
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+.bot {
+  border-color: white;
+  border-top: solid;
+  border-radius: 100%;;
+
+}
+/*<------------------------------------------->*/
+/*configuracion para hecer respnsive la pagina*/
+@media(max-width:991px){
+ .general-container {
+ margin-top:-50px; 
+ }
+}
+/*--------------------------------------------*/
+
+

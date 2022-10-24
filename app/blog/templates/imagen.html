@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('blog.static',filename='css/style_imagen.css') }}">
+<div class="general-container">
+	{% for ga in galeria  %}
+	{% if ga.1 == filtro %}
+	<div class="article">
+		<div class="left-side">
+			<img src="{{ga.2}}">
+		</div>
+		<div class="right-side">
+			<h2>{{ga.1}}</h2>
+			<p>{{ga.5}}</p>
+			<div>
+				<h5>{{ga.4}}</h5>
+				<h5>{{ga.3}}</h5>
+			</div>
+		</div>
+	</div>
+  	{% endif %}
+	{% endfor  %}
+	
+</div>
+{% endblock %}

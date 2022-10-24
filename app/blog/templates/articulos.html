@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('blog.static',filename='css/style_articulos.css') }}">
+<div class="general-container">
+<div class="tag-list">
+	<div>
+		<div class="list-element"><a href="/blog/articulos/categoria/Arte" class="element" style="background:#C0392B;">Arte</a></div>
+	<div class="list-element"><a href="/blog/articulos/categoria/Cine" class="element" style="background:#9B59B6;">Cine</a></div>
+	<div class="list-element"><a href="/blog/articulos/categoria/Cultura" class="element" style="background:#2980B9">Cultura</a></div>
+	<div class="list-element"><a href="/blog/articulos/categoria/Historia" class="element" style="background:#1ABC9C">Historia</a></div>
+	<div class="list-element"><a href="/blog/articulos/categoria/Literatura" class="element" style="background:#F900F2">Literatura</a></div>
+	</div>
+	<div>        
+	<div class="list-element"><a href="/blog/articulos/categoria/Musica" class="element" style="background:#F1C40F">Musica</a></div>
+	<div class="list-element"><a href="/blog/articulos/categoria/Eventos" class="element" style="background:#E67E22">Eventos</a></div>
+	<div class="list-element"><a href="/blog/articulos/categoria/Otros" class="element" style="background:#34495E">Otros</a></div>
+	</div>
+</div>
+  <div class="article-container">
+    {% for ar in  articulos  %}
+  <div class="blog-entry">
+    <img class="blog-img" src="{{ ar.2 }}" alt="">
+    <div class="content-date"><div class="date">{{ ar.3 }}</div></div>
+    <div class="blog-content">
+      <div class="content-title"><h1>{{ ar.1 }}</h1></div>
+
+      <div class="content-tag"  ><a href="/blog/articulos/categoria/{{ ar.4 }}">{{ ar.4 }}</a></div>
+      <span class="content-text">{{ ar.5 }}</span>
+        <a class="content-button" href="/blog/articulo/{{ ar.1 }}">Leer mas</a>
+    </div>
+  </div>
+ 
+  {% endfor %}
+
+ <script>
+	window.onload = function setColor(){
+			  const elements = document.getElementsByClassName('content-tag')
+			 for(var i = 0;i < elements.length;i++){
+			  if(elements[i].textContent == "Arte"){elements[i].style.background="#C0392B";}
+			  if(elements[i].textContent == "Cine"){elements[i].style.background="#9B59B6";}
+			  if(elements[i].textContent == "Cultura"){elements[i].style.background="#2980B9";}
+			  if(elements[i].textContent == "Historia"){elements[i].style.background="#1ABC9C";}
+			  if(elements[i].textContent == "Literatura"){elements[i].style.background="#F900F2";}
+			  if(elements[i].textContent == "Musica"){elements[i].style.background="#F1C40F";}
+			  if(elements[i].textContent == "Eventos"){elements[i].style.background="#E67E22";}
+			  if(elements[i].textContent == "Otros"){elements[i].style.background="#34495E";}
+				  }
+			 
+		 };
+ </script> 
+    </div>
+</div>
+
+{% endblock%}

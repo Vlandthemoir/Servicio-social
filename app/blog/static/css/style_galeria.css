@@ -1,0 +1,57 @@
+:root {
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+    
+    --primario: rgb(42,35,83);
+    --gris: #e1e1e1;
+    --blanco: #ffffff;
+    --negro: #000000;
+    --darkgray: rgb(78,78,78);
+    --lightgray: rgb(105,105,105);
+    --lightprimario:rgb(117,101,194);
+    --green:rgb(67,198,96);
+
+}
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: var(--fuenteParrafos);
+}
+
+/*configuraciones para el texto del encabezado*/
+.title {
+  padding-top: 125px;
+  padding-bottom: 25px;
+  text-align: center;
+  font-family: var(--fuenteHeading);
+}
+/*configuracion titulo*/
+.title h1 {
+ color:white;
+ font-size: 50px;
+ text-shadow: #474747 3px 5px 2px, 40px 28px 20px rgba(0,0,0,0);
+font-weight: 750; 	
+}
+/*--------------------*/
+/*-------------------------------------------*/
+.general-container {
+ top:0;
+ left:0;
+ padding-top: 25px;
+}
+/*---configuracion para las imagenes----*/
+.row .column img {
+ width:100%;
+ border-radius: 25px;
+ padding: 5px;
+}
+.row {
+ display:flex;
+ padding:5px;
+}
+.column {
+ flex:25%;
+ padding:5px;
+}
+/*--------------------------------------*/
