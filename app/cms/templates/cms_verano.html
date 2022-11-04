@@ -1,5 +1,4 @@
 {% extends "cms_layout.html" %}
-
 {% block content %}
 <link rel= "stylesheet" type= "text/css" href= "{{ url_for('cms.static',filename='css/style_cmsverano.css') }}">
 <div class="general-container">
@@ -52,7 +51,7 @@
 		<div class="title">
 			<h3>Tabla de contenidos</h3>
 		</div>
-		<table>
+		<table id="content-table">
 			<thead>
 				<tr>
 					<td>ID</td>
@@ -95,19 +94,14 @@
 	function load() {
 		  const a = document.getElementById("form-name").value;
 		  document.getElementById("preview-name").innerHTML = a;
-
 		  const b = document.getElementById("form-image").value;
 		  document.getElementById("preview-image").src = b;
-
 		  const c = document.getElementById("form-days").value;
 		  document.getElementById("preview-days").innerHTML = c;
-
 		  const d = document.getElementById("form-hours").value;
 		  document.getElementById("preview-hours").innerHTML = d;
-
 		  const e = document.getElementById("form-ages").value;
 		  document.getElementById("preview-ages").innerHTML = e;
 	}
 </script>
-
 {% endblock %}

@@ -27,6 +27,10 @@ def querySpecific(table,condition):
     result = cur().fetchall()
     return result
 
+@cms.route('/login')
+def login():
+    return render_template('cms_login.html')
+
 @cms.route('/verano')
 def verano():
     return render_template('cms_verano.html', verano = query("taller_verano"))
@@ -46,7 +50,6 @@ def add_verano():
 
 @cms.route('/verano/update/<id>',methods=['POST','GET'])
 def update_verano():
-    
     return redirect(url_for('cms.verano'))
 
 @cms.route('/verano/delete/<id>',methods=['POST','GET'])
@@ -72,9 +75,8 @@ def add_permanente():
         return redirect(url_for('cms.permanente'))
 
 @cms.route('/permanente/update/<id>',methods=['POST','GET'])
-def update_permanente():
-    
-    return redirect(url_for('cms.permenente'))
+def update_permanente(id): 
+    return redirect(url_for('cms.permanente'))
 
 @cms.route('/permanente/delete/<id>',methods=['POST','GET'])
 def delete_permanente(id):
