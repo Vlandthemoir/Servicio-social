@@ -27,6 +27,10 @@ def querySpecific(table,condition):
     result = cur().fetchall()
     return result
 
+@cms.route('/')
+def home():
+    return render_template('cms_home.html')
+
 @cms.route('/login')
 def login():
     return render_template('cms_login.html')

@@ -1,0 +1,16 @@
+.general-container {
+       font-family:sans-serif;
+}
+ .title {
+  margin-top:150px;
+}
+.title h3 {
+ color:white;
+ font-size: 100px;
+ text-shadow: #474747 3px 5px 2px, 40px 28px 20px rgba(0,0,0,0);
+ font-weight: 750;
+ padding:0;
+ margin:0; 
+ text-align:center;
+}
+

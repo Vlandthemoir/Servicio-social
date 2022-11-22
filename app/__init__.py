@@ -25,5 +25,4 @@ def create_app():
     app.register_blueprint(cms, url_prefix='/cms')
 
 
-
     return app
